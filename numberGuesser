@@ -1,21 +1,21 @@
-# to import random module
+# pour importer le module random
 import random
-# to create a range of random numbers between 1-10
-n = random.randrange(1,100)
-# to take a user input to enter a number
-guess = int(input("Enter any number: "))
-while n!= guess: # means if n is not equal to the input guess
-    # if guess is smaller than n
+# pour créer un nombre aléatoire entre 1 et 100
+n = random.randrange(1, 100)
+# pour demander à l'utilisateur d'entrer un nombre
+guess = int(input("Entrez un nombre : "))
+while n != guess:  # signifie que si n est différent de la supposition (guess)
+    # si la supposition est inférieure à n
     if guess < n:
-        print("Too low")
-        # to again ask for input
-        guess = int(input("Enter number again: "))
-    # if guess is greater than n
+        print("Trop bas")
+        # redemander une nouvelle entrée
+        guess = int(input("Entrez un autre nombre : "))
+    # si la supposition est supérieure à n
     elif guess > n:
-        print("Too high!")
-        # to again ask for the user input
-        guess = int(input("Enter number again: "))
-    # if guess gets equals to n terminate the while loop
+        print("Trop haut !")
+        # redemander une nouvelle entrée
+        guess = int(input("Entrez un autre nombre : "))
+    # si la supposition est égale à n, sortir de la boucle
     else:
         break
-print("you guessed it right!!")
+print("Bravo, vous avez deviné le bon nombre !")
