@@ -1,21 +1,35 @@
-# pour importer le module random
 import random
-# pour créer un nombre aléatoire entre 1 et 100
-n = random.randrange(1, 100)
-# pour demander à l'utilisateur d'entrer un nombre
-guess = int(input("Entrez un nombre : "))
-while n != guess:  # signifie que si n est différent de la supposition (guess)
-    # si la supposition est inférieure à n
-    if guess < n:
-        print("Trop bas")
-        # redemander une nouvelle entrée
-        guess = int(input("Entrez un autre nombre : "))
-    # si la supposition est supérieure à n
-    elif guess > n:
-        print("Trop haut !")
-        # redemander une nouvelle entrée
-        guess = int(input("Entrez un autre nombre : "))
-    # si la supposition est égale à n, sortir de la boucle
-    else:
-        break
-print("Bravo, vous avez deviné le bon nombre !")
+
+def jouer():
+    n = random.randrange(1, 100)
+    guess = int(input("Entrez un nombre entre 1 et 100 : "))
+    
+    while guess != n:
+        if guess < n:
+            print("Trop bas !")
+        elif guess > n:
+            print("Trop haut !")
+        guess = int(input("Essayez encore : "))
+    
+    print("Bravo, vous avez deviné le bon nombre !")
+
+def menu():
+    while True:
+        print("\n=== JEU DU NOMBRE MYSTÈRE ===")
+        print("1. Jouer")
+        print("2. Quitter")
+        choix = input("Votre choix : ")
+
+        if choix == "1":
+            jouer()
+            rejouer = input("Voulez-vous rejouer ? (o/n) : ").lower()
+            if rejouer != "o":
+                print("Merci d'avoir joué ! À bientôt.")
+                break
+        elif choix == "2":
+            print("Au revoir !")
+            break
+        else:
+            print("Choix invalide, veuillez entrer 1 ou 2.")
+
+menu()
